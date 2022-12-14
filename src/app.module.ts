@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import ormconfig from '../ormconfig';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MoviesModule } from './movies/movies.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import appConfig from './config/app.config';
 import appConfigSchema from './config/app.schema';
-import ormconfig from "../ormconfig";
 
 @Module({
   imports: [

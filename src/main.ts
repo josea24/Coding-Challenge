@@ -22,9 +22,6 @@ async function bootstrap(): Promise<void> {
   await app.listen(PORT, () => {
     Logger.log({
       message: `app listening at ${PORT} in ${ENV}`,
-      stt: 'Delivery',
-      context: 'main.ts',
-      functionName: 'bootstrap',
     });
   });
 }

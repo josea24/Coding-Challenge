@@ -103,12 +103,24 @@ export class FilterMoviesDto {
 }
 
 export class MoviesCoordinates {
-  @ApiProperty()
+  @ApiProperty({
+    type: Number,
+    example: 38.54491,
+    required: true,
+  })
   latitude: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: Number,
+    example: -121.74052,
+    required: true,
+  })
   longitude: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    type: String,
+    example: 'Ant-Man and the Wasp',
+    required: true,
+  })
   title: string;
 }

@@ -63,7 +63,15 @@ export class MoviesController {
   ): Promise<MoviesServiceDto[]> {
     return this.moviesService.findMovie({ title, location, search });
   }
-
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: MoviesCoordinates,
+    description: 'return location movie',
+  })
+  @ApiOperation({
+    summary: 'return movie location by title',
+    description: 'Get movie location by title',
+  })
   @ApiParam({
     name: 'title',
     type: String,

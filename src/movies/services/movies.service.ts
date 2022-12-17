@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
-import { axiosResponseTransformPipe } from '../../utils/axios.response';
+import { axiosResponseTransformPipe } from '../../utils/response.axio';
 import {
   MoviesServiceDto,
   FilterMoviesDto,

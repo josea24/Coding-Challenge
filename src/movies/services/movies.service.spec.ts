@@ -1,5 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { of } from 'rxjs';
+import { HttpException } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 
 export const httpResponseMock = {
@@ -27,7 +28,7 @@ export const httpResponseMock = {
 describe('MoviesService', () => {
   let service: MoviesService;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     service = new MoviesService(HttpService.prototype);
   });
 
@@ -51,6 +52,25 @@ describe('MoviesService', () => {
         .mockImplementationOnce(() => of(httpResponseMock));
       const result = await service.findMovie({ title: 'Ant-Man and the Wasp' });
       expect(result).toBeDefined();
+    });
+    it('return error', async () => {
+      const result = service.findMovie({ title: 'Ant-Man and the Wasp' });
+      await expect(result).rejects.toBeInstanceOf(HttpException);
+    });
+  });
+  describe('geocodingMovie', () => {
+    it('Get Movies and cord', async () => {
+      jest
+        .spyOn(HttpService.prototype, 'get')
+        .mockImplementationOnce(() => of(httpResponseMock));
+      const result = await service.geocodingMovie({
+        title: 'Ant-Man and the Wasp',
+      });
+      expect(result).toBeDefined();
+    });
+    it('return error', async () => {
+      const result = service.findMovie({ title: 'Ant-Man and the Wasp' });
+      await expect(result).rejects.toBeInstanceOf(HttpException);
     });
   });
 });

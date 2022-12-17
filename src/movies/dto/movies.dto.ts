@@ -101,3 +101,14 @@ export class FilterMoviesDto {
   })
   search?: string;
 }
+
+export class MoviesCoordinates {
+  @ApiProperty()
+  latitude: number;
+
+  @ApiProperty()
+  longitude: number;
+
+  @ApiProperty()
+  title: string;
+}

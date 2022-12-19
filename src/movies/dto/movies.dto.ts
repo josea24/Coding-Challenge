@@ -123,4 +123,74 @@ export class MoviesCoordinates {
     required: true,
   })
   title: string;
+
+  @ApiProperty({
+    type: Number,
+    example: 2018,
+    required: false,
+  })
+  release_year?: number;
+
+  @ApiProperty({
+    type: String,
+    example: 'Jones St btwn Green and Pacific',
+    required: true,
+  })
+  locations: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'VFX Plate Shots',
+    required: false,
+  })
+  fun_Facts?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'PYM Particles Productions II, LLC',
+    required: false,
+  })
+  production_company?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'Michael Ferris Gibson',
+    required: false,
+  })
+  director?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'Zealot Pictures',
+    required: false,
+  })
+  distributor?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'Umarji Anuradha, Jayendra, Aarthi Sriram, & Suba',
+    required: false,
+  })
+  writer?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'Siddarth',
+    required: false,
+  })
+  actor_1?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'Nithya Menon',
+    required: false,
+  })
+  actor_2?: string;
+
+  @ApiProperty({
+    type: String,
+    example: 'Priya Anand',
+    required: false,
+  })
+  actor_3?: string;
 }

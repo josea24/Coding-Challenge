@@ -12,7 +12,7 @@ export const geoCode = async (
         const geocoded = apiResult.results[0];
         const latitude = geocoded.geometry.lat;
         const longitude = geocoded.geometry.lng;
-        cord.push({ latitude, longitude, title: movie.title });
+        cord.push({ latitude, longitude, ...movie });
       }
     }
   }
